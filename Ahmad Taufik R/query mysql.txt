@@ -1,0 +1,19 @@
+1- INSERT INTO pasien (nama_pasien, umur, alamat)
+VALUES ('Revina', '17', 'Tasikmalaya');
+2- INSERT INTO perusahaan_obat (Nama_Perusahaan, Alamat, No_Izin_Operasional)
+VALUES ('Sidomuncul', 'Yogyakarta', '7686868532');
+3- INSERT INTO detail_obat (nama_obat, komposisi, produsen, nomor_izin_bpom)
+VALUES ('Tolak Angin', 'adas, jahe, daun mint, daung cengkeh, kayu ules, madu','Sidomuncul', '44432213');
+4- UPDATE detail_obat
+SET nomor_izin_bpom = '55436786'
+WHERE id_details = 5;
+5- UPDATE detail_obat
+SET nomor_izin_bpom = '55443321', komposisi='Dextromethorphan HBr 5 mg, Guaiphenesin 100 mg, Chlorpheniramine maleate 2 mg'
+WHERE id_details = 5;
+6- INSERT INTO obat ('id', 'nama_merek', 'jenis_obat', 'khasiat', 'harga_obat', 'id_perusahaan', 'details') 
+VALUES ('Tolak Angin', 'cair', 'Meringankan gejala masuk angin', '15000', '6', '4');
+7- INSERT INTO table_harga ('id_harga', 'harga', 'id_obat') 
+VALUES ('15000', '7');
+8- INSERT INTO transaksi ('id', 'id_pasien', 'id_obat', 'harga') VALUES ('5', '9', '6');
+9- SELECT nama_obat, komposisi, produsen FROM detail_obat WHERE produsen = 'Farmacetical';
+10- SELECT * FROM obat WHERE harga_obat <= 50000;
