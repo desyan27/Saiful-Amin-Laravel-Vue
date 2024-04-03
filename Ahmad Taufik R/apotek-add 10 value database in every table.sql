@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2024 at 04:36 PM
+-- Generation Time: Apr 03, 2024 at 03:17 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,24 +32,26 @@ CREATE TABLE `detail_obat` (
   `nama_obat` varchar(30) NOT NULL,
   `komposisi` varchar(255) NOT NULL,
   `produsen` varchar(30) NOT NULL,
-  `nomor_izin_bpom` int(11) NOT NULL
+  `nomor_izin_bpom` int(11) NOT NULL,
+  `stok` int(11) NOT NULL,
+  `masa_kadaluarsa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `detail_obat`
 --
 
-INSERT INTO `detail_obat` (`id_details`, `nama_obat`, `komposisi`, `produsen`, `nomor_izin_bpom`) VALUES
-(1, 'Vaksin Sinovac', 'Larutan fosfat sebagai stabilizer, natrium chlorida (NaCl)', 'Biofarma', 23124535),
-(2, 'Obat Cacing', 'Mengandung 250mg Pirantel Pamoat', 'Biokimia', 24435554),
-(3, 'Obat Pusing', '500mg paracetamol', 'Biokimia', 34454532),
-(4, 'Tolak Angin', 'adas, jahe, daun mint, daung cengkeh, kayu ules, madu', 'Sidomuncul', 44432213),
-(5, 'Konidin', 'Dextromethorphan HBr 5 mg, Guaiphenesin 100 mg, Chlorpheniramine maleate 2 mg', 'Sanbe Farma', 55443321),
-(6, 'Promag', 'hydrotalcite, magnesium hidroksida, simethicone', 'Afiat', 66432179),
-(7, 'Amlodiphine', 'amlodipine 5mg', 'Farmacetical', 22356432),
-(8, 'Melaxicome', 'meloxicam 7.5mg', 'Farmacetical', 76545311),
-(9, 'Degirol', 'dequalinium chloride', 'Asta Medica', 98873213),
-(10, 'OBH Combi', 'succus liquiritiae, paracetamol, ammonium chloride, pseudoephedrin', 'Dexa Farma', 33217856);
+INSERT INTO `detail_obat` (`id_details`, `nama_obat`, `komposisi`, `produsen`, `nomor_izin_bpom`, `stok`, `masa_kadaluarsa`) VALUES
+(1, 'Vaksin Sinovac', 'Larutan fosfat sebagai stabilizer, natrium chlorida (NaCl)', 'Biofarma', 23124535, 100, 2026),
+(2, 'Obat Cacing', 'Mengandung 250mg Pirantel Pamoat', 'Biokimia', 24435554, 56, 2026),
+(3, 'Obat Pusing', '500mg paracetamol', 'Biokimia', 34454532, 77, 2025),
+(4, 'Tolak Angin', 'adas, jahe, daun mint, daung cengkeh, kayu ules, madu', 'Sidomuncul', 44432213, 125, 2024),
+(5, 'Konidin', 'Dextromethorphan HBr 5 mg, Guaiphenesin 100 mg, Chlorpheniramine maleate 2 mg', 'Sanbe Farma', 55443321, 37, 2025),
+(6, 'Promag', 'hydrotalcite, magnesium hidroksida, simethicone', 'Afiat', 66432179, 23, 2024),
+(7, 'Amlodiphine', 'amlodipine 5mg', 'Farmacetical', 22356432, 105, 2026),
+(8, 'Melaxicome', 'meloxicam 7.5mg', 'Farmacetical', 76545311, 17, 2026),
+(9, 'Degirol', 'dequalinium chloride', 'Asta Medica', 98873213, 69, 2025),
+(10, 'OBH Combi', 'succus liquiritiae, paracetamol, ammonium chloride, pseudoephedrin', 'Dexa Farma', 33217856, 6, 2024);
 
 -- --------------------------------------------------------
 
@@ -74,7 +76,7 @@ CREATE TABLE `obat` (
 INSERT INTO `obat` (`id`, `nama_merek`, `jenis_obat`, `khasiat`, `harga_obat`, `id_perusahaan`, `details`) VALUES
 (4, 'Obat Cacing', 'tablet', 'Mencegah penyakit cacingan', 75000, 2, 2),
 (5, 'Obat Sakit Kepala', 'tablet', 'Meringankan gejala pusing', 30000, 2, 3),
-(6, 'Vaksin Sinovac', 'cairan', 'Meningkatkan antibodi virus pada sistem kekebalan tubuh', 500000, 1, 1),
+(6, 'Vaksin Sinovac', 'cair', 'Meningkatkan antibodi virus pada sistem kekebalan tubuh', 500000, 1, 1),
 (7, 'Tolak Angin', 'cair', 'Meringankan gejala masuk angin', 15000, 6, 4),
 (8, 'Konidin', 'tablet', 'Meringankan gejala batuk', 2500, 7, 5),
 (9, 'Promag', 'tablet', 'Meringankan gejala magh', 8000, 9, 6),
